@@ -1,5 +1,8 @@
 import random
-word_list = ['banana', 'cabbage', 'outcast', 'sparrow', 'cheese']
+word_list = ['banana', 'cabbage', 'outcast', 'sparrow', 'cheese', 'muffins', 'elephant', 'cheeseburger', 'zoolander', 'thanos', 'pirates', 'carbonation', 'zinc', 'rebel', 'minced', 'rootbeer', 'stupendous', 'chrysanthemum', 'chameleon', 'geralt', 'rendition', 'framed', 
+'cloudy', 'meatball', 'samurai', 'inception', 'stardust', 'barbie', 'prisoner', 'avatar', 'coraline', 'potter', 'lobster', 'giraffe', 'grinch', 'tropic', 'thunder', 'doctor', 'labyrinth', 'everywhere', 'whiplash', 'psycho', 'godfather', 'shawshank', 'sunshine', 'alien',
+'predator', 'empire', 'translation', 'nightmare', 'gladiator', 'hamilton', 'anchorman', 'dodgeball', 'joker', 'batman', 'annabelle', 'midsommar', 'budapest', 'bangladesh', 'europe', 'england', 'birmingham', 'pilgrim', 'guardians', 'onion', 'fantastic', 'titanic', 'gatsby',
+'rocketman', 'gentlemen', 'hustle', 'seattle', 'dallas', 'newyork', 'hellboy', 'highlander', 'ratatouille', 'barbarian', 'annihilation', 'paddington', 'wonka', 'pacific', 'washington', 'zebra', 'xylophone', 'mulan', 'fortune', 'yellowjacket', 'ukraine', 'tokyo', 'vancouver', 'canada', 'python', 'leonardo', 'michaelangelo', 'creed', 'uncharted', 'zombie', 'ghoul', 'haunted', 'luigi', 'mario', 'peaches', 'pokemon', 'rainbow', 'spectrum', 'booming', 'dungeon', 'zeus', 'hades', 'fallout', 'skyrim', 'mariokart', 'zelda', 'paladin', 'overwatch', 'crazy', 'gorilla', 'fantasy']
 
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
@@ -22,11 +25,13 @@ while end_of_game == False:
             display[position] = letter
     if guess not in chosen_word:
         lives -= 1
-        print(f"That letter is not right. lives left: {lives}")
+        print(f"That letter is not right.\nlives left: {lives}\n")
         if lives == 0:
             end_of_game = True
             print("Out of lives. You lose.")
+            print(f"The word was: {chosen_word}")
     print(f"{' '.join(display)}")
     if "_" not in display:
         end_of_game = True
         print("You win!")
+
