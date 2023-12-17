@@ -1,0 +1,32 @@
+import random
+word_list = ['banana', 'cabbage', 'outcast', 'sparrow', 'cheese']
+
+chosen_word = random.choice(word_list)
+word_length = len(chosen_word)
+end_of_game = False
+display = []
+for _ in range(word_length):
+    display += '_'
+
+lives = 6    
+print("Hello, welcome to Hangman")
+print(display)
+
+while end_of_game == False:
+    guess = input("Guess a letter. ").lower()
+    if guess in display:
+        print("You have already guess that letter.")
+    for position in range(word_length):
+        letter = chosen_word[position]
+        if letter == guess:
+            display[position] = letter
+    if guess not in chosen_word:
+        lives -= 1
+        print(f"That letter is not right. lives left: {lives}")
+        if lives == 0:
+            end_of_game = True
+            print("Out of lives. You lose.")
+    print(f"{' '.join(display)}")
+    if "_" not in display:
+        end_of_game = True
+        print("You win!")
